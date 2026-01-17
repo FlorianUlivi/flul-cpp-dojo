@@ -1,0 +1,5 @@
+{
+  "name": "cpp-dojo",
+  "version": "1.0.0",
+  "dependencies": ["gtest"]
+}
