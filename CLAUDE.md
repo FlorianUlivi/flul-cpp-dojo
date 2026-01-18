@@ -21,6 +21,12 @@ ctest --preset debug
 cmake --build build/debug --target <name>_test
 ```
 
+## Run All Experiments
+
+```bash
+./build/debug/core/runner/runner
+```
+
 ## Presets
 
 ```bash
@@ -30,12 +36,63 @@ cmake --preset release   # Release build
 
 ## Structure
 
-- `features/` - C++ language features
-- `patterns/` - Design patterns
-- `katas/` - Programming challenges
-- `experiments/` - Freeform exploration
+- `core/` - Shared infrastructure
+  - `dispatcher/` - Experiment registry library
+  - `runner/` - Central executable that runs all experiments
+- `dojo/` - Experiment categories
+  - `features/` - C++ language features
+  - `patterns/` - Design patterns
+  - `katas/` - Programming challenges
+  - `sandbox/` - Freeform exploration
 
-Each directory contains independent sub-projects. See README.md for detailed workflow.
+Each category directory builds a shared library (`<category>_experiments`) that the runner links.
+
+## Adding an Experiment
+
+An "experiment" is any code that registers with the dispatcher, regardless of which folder it lives in.
+
+1. Create your experiment file in the appropriate category folder:
+
+```cpp
+// dojo/features/concepts/my_experiment.cpp
+#include <iostream>
+
+#include <experiment_registry.hpp>
+
+namespace {
+
+struct RegisterMyExperiment {
+    RegisterMyExperiment() {
+        cpp_dojo::ExperimentRegistry::Builder("My Experiment").Execute([]() {
+            std::cout << "Hello from my experiment\n";
+        });
+    }
+} register_my_experiment;
+
+}  // namespace
+```
+
+2. Add the file to the category's `CMakeLists.txt`:
+
+```cmake
+add_library(features_experiments SHARED
+    _placeholder.cpp
+    concepts/my_experiment.cpp  # Add here
+)
+```
+
+3. Rebuild and run:
+
+```bash
+cmake --build --preset debug
+./build/debug/core/runner/runner
+```
+
+## CMake Guidelines
+
+- **Always list source files explicitly** in CMakeLists.txt - never use file globbing/discovery
+- Each category has a `<category>_experiments` shared library
+- The runner links all category libraries - no changes needed when adding experiments
 
 ## Code Style
 

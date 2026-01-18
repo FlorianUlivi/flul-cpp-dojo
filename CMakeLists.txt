@@ -19,8 +19,8 @@ find_package(GTest CONFIG REQUIRED)
 enable_testing()
 include(GoogleTest)
 
-# Add subdirectories for different learning areas
-add_subdirectory(features)
-add_subdirectory(patterns)
-add_subdirectory(katas)
-add_subdirectory(experiments)
+# Core infrastructure (shared libraries)
+add_subdirectory(core)
+
+# Experiment categories
+add_subdirectory(dojo)
