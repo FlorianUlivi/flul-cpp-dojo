@@ -1,8 +1,5 @@
 # Freeform exploration area
 
-# Standalone sub-projects
-add_subdirectory(dispatcher_examples)
-
 # Experiments library - add experiment source files here
 add_library(sandbox_experiments SHARED
     _placeholder.cpp
