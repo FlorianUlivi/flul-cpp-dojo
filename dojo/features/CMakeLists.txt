@@ -4,6 +4,7 @@
 add_library(features_experiments SHARED
     _placeholder.cpp
     # Add experiment files below:
+    function_objects.cpp
 )
 
 target_link_libraries(features_experiments
