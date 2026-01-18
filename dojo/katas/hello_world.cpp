@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include <experiment_registry.hpp>
 
 namespace {
@@ -13,8 +14,8 @@ void hello_world() {
 
 struct RegisterHelloWorld {
     RegisterHelloWorld() {
-        cpp_dojo::ExperimentRegistry::Builder("Hello world").Execute(&hello_world);
+        flul_cpp_dojo::ExperimentRegistry::Builder("Hello world").Execute(&hello_world);
     }
 } register_hello_world;
 
-}
+}  // namespace

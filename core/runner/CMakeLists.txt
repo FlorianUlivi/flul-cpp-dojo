@@ -7,7 +7,7 @@ add_executable(runner
 
 target_link_libraries(runner
     PRIVATE
-        cpp_dojo::dispatcher
+        flul_cpp_dojo::dispatcher
         features_experiments
         patterns_experiments
         katas_experiments

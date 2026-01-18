@@ -8,5 +8,5 @@ add_library(sandbox_experiments SHARED
 
 target_link_libraries(sandbox_experiments
     PRIVATE
-        cpp_dojo::dispatcher
+        flul_cpp_dojo::dispatcher
 )

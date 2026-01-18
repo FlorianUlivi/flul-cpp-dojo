@@ -4,7 +4,7 @@
 #include <experiment_registry.hpp>
 #include <gtest/gtest.h>
 
-namespace cpp_dojo {
+namespace flul_cpp_dojo {
 namespace {
 
 class ExperimentRegistryTest : public ::testing::Test {
@@ -132,4 +132,4 @@ TEST_F(ExperimentRegistryTest, BuilderWithoutExecuteDoesNotRegister) {
 }
 
 }  // namespace
-}  // namespace cpp_dojo
+}  // namespace flul_cpp_dojo

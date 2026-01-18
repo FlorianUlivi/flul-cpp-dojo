@@ -2,7 +2,7 @@
 # Header-only library for experiment registration and execution
 
 add_library(dispatcher INTERFACE)
-add_library(cpp_dojo::dispatcher ALIAS dispatcher)
+add_library(flul_cpp_dojo::dispatcher ALIAS dispatcher)
 
 target_include_directories(dispatcher
     INTERFACE

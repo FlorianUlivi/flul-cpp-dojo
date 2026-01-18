@@ -1,5 +1,5 @@
-#ifndef CPP_DOJO_EXPERIMENT_REGISTRY_HPP
-#define CPP_DOJO_EXPERIMENT_REGISTRY_HPP
+#ifndef FLUL_CPP_DOJO_EXPERIMENT_REGISTRY_HPP
+#define FLUL_CPP_DOJO_EXPERIMENT_REGISTRY_HPP
 
 #include <functional>
 #include <iostream>
@@ -7,7 +7,7 @@
 #include <string>
 #include <utility>
 
-namespace cpp_dojo {
+namespace flul_cpp_dojo {
 
 class ExperimentRegistry {
    public:
@@ -71,6 +71,6 @@ class ExperimentRegistry::Builder {
     std::string name_;
 };
 
-}  // namespace cpp_dojo
+}  // namespace flul_cpp_dojo
 
-#endif  // CPP_DOJO_EXPERIMENT_REGISTRY_HPP
+#endif  // FLUL_CPP_DOJO_EXPERIMENT_REGISTRY_HPP

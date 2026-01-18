@@ -9,5 +9,5 @@ add_library(katas_experiments SHARED
 
 target_link_libraries(katas_experiments
     PRIVATE
-        cpp_dojo::dispatcher
+        flul_cpp_dojo::dispatcher
 )

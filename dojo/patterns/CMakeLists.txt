@@ -8,5 +8,5 @@ add_library(patterns_experiments SHARED
 
 target_link_libraries(patterns_experiments
     PRIVATE
-        cpp_dojo::dispatcher
+        flul_cpp_dojo::dispatcher
 )

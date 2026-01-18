@@ -63,7 +63,7 @@ namespace {
 
 struct RegisterMyExperiment {
     RegisterMyExperiment() {
-        cpp_dojo::ExperimentRegistry::Builder("My Experiment").Execute([]() {
+        flul_cpp_dojo::ExperimentRegistry::Builder("My Experiment").Execute([]() {
             std::cout << "Hello from my experiment\n";
         });
     }

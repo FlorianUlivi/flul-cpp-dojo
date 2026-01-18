@@ -1,5 +1,5 @@
 {
-  "name": "cpp-dojo",
+  "name": "flul-cpp-dojo",
   "version": "1.0.0",
   "dependencies": ["gtest"]
 }
